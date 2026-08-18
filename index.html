@@ -36,7 +36,7 @@
 
 
 
-<!-- =====================================================
+<!-<!-- =====================================================
      HEADER
 ===================================================== -->
 
@@ -44,98 +44,98 @@
 
     <nav class="nav-bar">
 
-        <div class="nav-inner">
+        <div class="container nav-inner">
 
+
+            <!-- LOGO -->
 
             <a
                 href="#"
-                class="brand"
-                aria-label="Raphadbuilders home"
+                class="text-logo"
             >
-                RAPHAD<span>BUILDERS</span>
+
+                <span>
+                    CYNOSURE
+                </span>
+
+                <small>
+                    CONSTRUCTION
+                </small>
+
             </a>
 
 
-            <div class="main-nav">
 
-                <a href="#about">
+            <!-- MAIN NAVIGATION -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a href="about.html">
                     About
                 </a>
 
-                <a href="#services">
+                <a href="services.html">
                     Services
                 </a>
 
-                <a href="#projects">
+                <a href="projects.html">
                     Projects
                 </a>
 
-                <a href="#gallery">
+                <a href="process.html">
+                    Process
+                </a>
+
+                <a href="gallery.html">
                     Gallery
                 </a>
 
-                <a href="#contact">
+                <a href="testimonials.html">
+                    Testimonials
+                </a>
+
+                <a href="contact.html">
                     Contact
                 </a>
 
+            </nav>
+
+
+
+            <!-- NAV RIGHT -->
+
+            <div class="nav-right">
+
+                <a
+                    href="contact.html"
+                    class="nav-contact"
+                >
+                    Let's Talk
+                </a>
+
+
+                <button
+                    class="mobile-toggle"
+                    id="mobileToggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
             </div>
-
-
-            <a
-                href="#contact"
-                class="nav-cta"
-            >
-                START A PROJECT
-            </a>
-
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
 
         </div>
 
     </nav>
-
-
-    <!-- MOBILE NAV -->
-
-    <div
-        class="mobile-nav"
-        id="mobileNav"
-    >
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#services">
-            Services
-        </a>
-
-        <a href="#projects">
-            Projects
-        </a>
-
-        <a href="#gallery">
-            Gallery
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </div>
 
 </header>
 
@@ -144,108 +144,95 @@
 <main>
 
 
+
 <!-- =====================================================
      HERO
 ===================================================== -->
 
 <section class="hero">
 
-    <div class="hero-card">
+    <div class="hero-media">
 
+        <video
+            id="heroVideo"
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"  
+        >
 
-        <div class="hero-image">
-
-            <img
-                src="assets/hero.jpg"
-                alt="Raphadbuilders construction project"
+            <source
+                src="assets/hero.mp4"
+                type="video/mp4"
             >
 
-            <div class="hero-image-overlay"></div>
+        </video>
 
-        </div>
+        <div class="hero-overlay"></div>
 
-
-        <div class="hero-content">
-
-            <span class="hero-eyebrow">
-                RAPHADBUILDERS CONSTRUCTION COMPANY LTD.
-            </span>
+    </div>
 
 
-            <h1>
 
-                BUILDING
+    <div class="hero-content">
+
+        <span class="hero-eyebrow">
+            BUILDING WITH PURPOSE
+        </span>
+
+
+        <h1>
+
+            Built to last.
+
+            <em>
+                Built for you.
+            </em>
+
+        </h1>
+
+
+        <p>
+
+            Quality construction services delivered
+            with precision, reliability and attention
+            to every detail.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="contact.html"
+                class="primary-button"
+            >
+
+                Start a Project
 
                 <span>
-                    WITH PURPOSE.
+                    ↗
                 </span>
 
-            </h1>
+            </a>
 
 
-            <p class="hero-description">
+            <a
+                href="work.html"
+                class="secondary-button"
+            >
 
-                Building and civil engineering solutions
-                delivered through professionalism, quality,
-                precision and responsible project execution.
+                Explore Our Work
 
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="#projects"
-                    class="btn btn-primary"
-                >
-
-                    VIEW OUR PROJECTS
-
-                    <span>
-                        ↗
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="#contact"
-                    class="btn btn-secondary"
-                >
-
-                    START A PROJECT
-
-                    <span>
-                        ↗
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-meta">
-
-            <span>
-                BUILDING
-            </span>
-
-            <span>
-                ENGINEERING
-            </span>
-
-            <span>
-                PROJECT DELIVERY
-            </span>
+            </a>
 
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
