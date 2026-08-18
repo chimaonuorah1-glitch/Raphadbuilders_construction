@@ -2038,201 +2038,553 @@ ol {
     line-height: 1.7;
 }
 
+/* =====================================================
+   OUR BOARD
+   PREMIUM LEADERSHIP SECTION
+===================================================== */
 
-/* =========================================================
-   LEADERSHIP
-   HORIZONTAL AUTO-SCROLLING
-   ========================================================= */
-
-.leadership-section {
-
-    width: 100%;
-
-    padding:
-        110px 0;
-
-    overflow: hidden;
-
-    background:
-        #ebe7de;
-}
-
-.leadership-header {
-
-    width:
-        min(
-            calc(100% - 50px),
-            var(--container)
-        );
-
-    margin: 0 auto;
-}
-
-.leadership-header p {
-
-    max-width: 620px;
-
-    margin-top: 24px;
-
-    color: var(--text-soft);
-
-    font-size: 14px;
-
-    line-height: 1.85;
-}
-
-
-/* IMPORTANT:
-   LEADERSHIP IS NOW A HORIZONTAL TRACK */
-
-.leadership-grid {
-
-    display: flex;
-
-    gap: 18px;
-
-    width: max-content;
-
-    margin-top: 60px;
-
-    padding-left:
-        max(
-            25px,
-            calc(
-                (100vw - var(--container))
-                / 2
-            )
-        );
-
-    animation:
-        leadershipScroll
-        35s
-        linear
-        infinite;
-}
-
-.leadership-grid:hover {
-
-    animation-play-state:
-        paused;
-}
-
-
-/* MEMBER CARD */
-
-.leader-card {
-
+.board-section {
     position: relative;
 
-    width: 300px;
-    min-height: 400px;
-
-    flex-shrink: 0;
+    padding: 90px 0 80px;
 
     overflow: hidden;
 
-    border-radius: 28px;
-
-    background: white;
-
-    box-shadow:
-        0 20px 55px
-        rgba(25,25,20,.10);
-
-    transition:
-        transform .4s var(--ease);
-}
-
-.leader-card:hover {
-
-    transform:
-        translateY(-8px);
+    background: #0b0c0c;
 }
 
 
-/* MEMBER IMAGE */
+/* =====================================================
+   BOARD HEADING
+===================================================== */
 
-.leader-card img,
-.leader-image {
+.board-heading {
+    max-width: 650px;
 
-    width: 100%;
-
-    height: 285px;
-
-    object-fit: cover;
-
-    background: #ddd;
+    margin-bottom: 45px;
 }
 
-.leader-image img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* MEMBER INFORMATION */
-
-.leader-info {
-
-    padding: 22px 24px;
-}
-
-.leader-number {
+.board-heading .section-label {
+    display: block;
 
     color: var(--gold);
 
-    font-size: 9px;
+    font-size: 10px;
+    font-weight: 700;
 
-    font-weight: 800;
+    letter-spacing: .24em;
+    text-transform: uppercase;
 
-    letter-spacing: .14em;
+    text-shadow: var(--gold-glow);
 }
 
-.leader-card h3 {
+.board-heading h2 {
+    margin-top: 12px;
 
-    margin-top: 9px;
+    color: var(--cream);
 
-    color: var(--text);
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.08;
 
-    font-size: 21px;
+    letter-spacing: -.04em;
 
-    line-height: 1.1;
-
-    letter-spacing: -.03em;
+    text-shadow:
+        0 0 18px rgba(201,164,92,.08);
 }
 
-.leader-card p {
+.board-heading p {
+    max-width: 520px;
 
-    margin-top: 7px;
+    margin-top: 15px;
 
-    color: var(--text-muted);
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BOARD SLIDER
+===================================================== */
+
+.board-slider {
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   SOFT EDGE FADE
+===================================================== */
+
+.board-slider::before,
+.board-slider::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 90px;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.board-slider::before {
+    left: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b0c0c,
+            transparent
+        );
+}
+
+.board-slider::after {
+    right: 0;
+
+    background:
+        linear-gradient(
+            270deg,
+            #0b0c0c,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   MOVING TRACK
+===================================================== */
+
+.board-track {
+    display: flex;
+
+    width: max-content;
+
+    align-items: stretch;
+
+    animation:
+        boardMove 28s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* =====================================================
+   BOARD GROUP
+   EACH GROUP MUST BE IDENTICAL
+===================================================== */
+
+.board-group {
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 18px;
+
+    flex-shrink: 0;
+
+    padding:
+        10px
+        max(24px, calc((100vw - 1180px) / 2));
+}
+
+
+/* =====================================================
+   BOARD CARD
+===================================================== */
+
+.board-card {
+    position: relative;
+
+    width: 275px;
+    height: 365px;
+
+    flex: 0 0 275px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(201,164,92,.32);
+
+    border-radius: 8px 42px 8px 42px;
+
+    background: #151616;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 10px rgba(201,164,92,.10);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* =====================================================
+   BOARD IMAGE
+===================================================== */
+
+.board-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.board-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.35) 45%,
+            rgba(0,0,0,.02) 75%
+        );
+}
+
+.board-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s ease,
+        filter .5s ease;
+}
+
+
+/* =====================================================
+   BOARD INFORMATION
+===================================================== */
+
+.board-info {
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+    bottom: 21px;
+
+    z-index: 2;
+}
+
+.board-info h3 {
+    color: #f4f1e8;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    letter-spacing: -.02em;
+}
+
+.board-info span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--gold-light);
 
     font-size: 9px;
+    font-weight: 700;
 
-    font-weight: 800;
-
-    letter-spacing: .08em;
+    letter-spacing: .16em;
 
     text-transform: uppercase;
+
+    text-shadow: var(--gold-glow);
 }
 
-@keyframes leadershipScroll {
+
+/* =====================================================
+   HOVER / TAP GLOW
+===================================================== */
+
+.board-card:hover,
+.board-card:active {
+    border-color: var(--gold-light);
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 0 8px rgba(239,210,138,.65),
+        0 0 25px rgba(201,164,92,.42),
+        0 0 50px rgba(201,164,92,.18),
+        0 20px 55px rgba(0,0,0,.5);
+}
+
+.board-card:hover .board-image img,
+.board-card:active .board-image img {
+    transform: scale(1.045);
+
+    filter:
+        brightness(1.04)
+        saturate(1.05);
+}
+
+
+/* =====================================================
+   SEAMLESS CONTINUOUS MOVEMENT
+===================================================== */
+
+@keyframes boardMove {
 
     from {
         transform: translateX(0);
     }
 
     to {
-        transform:
-            translateX(
-                calc(-50% - 9px)
-            );
+        transform: translateX(-50%);
     }
+
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .board-section {
+        padding: 70px 0 60px;
+    }
+
+    .board-heading {
+        margin-bottom: 30px;
+    }
+
+    .board-heading h2 {
+        font-size: 31px;
+    }
+
+    .board-heading p {
+        font-size: 12px;
+    }
+
+
+    .board-track {
+        animation-duration: 22s;
+    }
+
+
+    .board-group {
+        gap: 12px;
+
+        padding:
+            8px
+            15px;
+    }
+
+
+    .board-card {
+        width: 205px;
+        height: 290px;
+
+        flex: 0 0 205px;
+
+        border-radius: 7px 30px 7px 30px;
+    }
+
+
+    .board-info {
+        left: 17px;
+        right: 17px;
+        bottom: 17px;
+    }
+
+
+    .board-info h3 {
+        font-size: 15px;
+    }
+
+
+    .board-info span {
+        font-size: 8px;
+    }
+
+
+    .board-slider::before,
+    .board-slider::after {
+        width: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .board-track {
+        animation: none;
+    }
+
+    .board-card,
+    .board-image img {
+        transition: none;
+    }
+
+}
+
+/* =====================================================
+   BOARD ITEM
+   CARD + PORTFOLIO BUTTON MOVE TOGETHER
+===================================================== */
+
+.board-item {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 220px;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   PORTFOLIO BUTTON
+   SITS UNDER THE CARD — NOT INSIDE IT
+===================================================== */
+
+.board-portfolio-button {
+    width: 100%;
+
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(201, 164, 92, .45);
+    border-radius: 6px 18px 6px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(201, 164, 92, .08),
+            rgba(201, 164, 92, .025)
+        );
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .12em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 0 8px rgba(201, 164, 92, .08),
+        inset 0 0 14px rgba(201, 164, 92, .025);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease,
+        color .3s ease;
+}
+
+
+/* ARROW */
+
+.board-portfolio-button span {
+    font-size: 15px;
+    line-height: 1;
+
+    transition:
+        transform .3s ease;
+}
+
+
+/* =====================================================
+   HOVER / TAP
+===================================================== */
+
+.board-portfolio-button:hover,
+.board-portfolio-button:active {
+    transform: translateY(-3px);
+
+    border-color: var(--gold-light);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(201, 164, 92, .18),
+            rgba(201, 164, 92, .055)
+        );
+
+    color: #f4f1e8;
+
+    box-shadow:
+        0 0 8px rgba(239, 210, 138, .35),
+        0 0 22px rgba(201, 164, 92, .18),
+        0 10px 25px rgba(0, 0, 0, .3);
+}
+
+
+.board-portfolio-button:hover span,
+.board-portfolio-button:active span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .board-item {
+        width: 205px;
+
+        gap: 10px;
+    }
+
+    .board-portfolio-button {
+        min-height: 40px;
+
+        padding: 0 13px;
+
+        font-size: 9px;
+
+        letter-spacing: .1em;
+    }
+
+    .board-portfolio-button span {
+        font-size: 14px;
+    }
+
+}
 
 /* =========================================================
    CONTACT
