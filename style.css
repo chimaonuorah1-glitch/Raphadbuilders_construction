@@ -576,7 +576,7 @@ section {
 
 .group-showcase {
     padding: 90px 24px;
-    background: #0b0c0c;
+    background: #EEEAE2;
 }
 
 .raphad-video-text {
@@ -2224,7 +2224,7 @@ p {
 }
 
 
-/* =====================================================
+/* =====/* =====================================================
    OUR BOARD
 ===================================================== */
 
@@ -2239,7 +2239,7 @@ p {
         hidden;
 
     background:
-        #0b0c0c;
+        var(--cream);
 }
 
 .board-heading {
@@ -2268,9 +2268,6 @@ p {
 
     text-transform:
         uppercase;
-
-    text-shadow:
-        var(--gold-glow);
 }
 
 .board-heading h2 {
@@ -2278,7 +2275,7 @@ p {
         12px;
 
     color:
-        var(--cream);
+        var(--dark);
 
     font-size:
         clamp(30px, 4vw, 46px);
@@ -2288,10 +2285,6 @@ p {
 
     letter-spacing:
         -.04em;
-
-    text-shadow:
-        0 0 18px
-        rgba(201,164,92,.08);
 }
 
 .board-heading p {
@@ -2358,7 +2351,7 @@ p {
     background:
         linear-gradient(
             90deg,
-            #0b0c0c,
+            var(--cream),
             transparent
         );
 }
@@ -2370,7 +2363,7 @@ p {
     background:
         linear-gradient(
             270deg,
-            #0b0c0c,
+            var(--cream),
             transparent
         );
 }
@@ -2403,7 +2396,7 @@ p {
         stretch;
 
     gap:
-        18px;
+        24px;
 
     flex-shrink:
         0;
@@ -2429,30 +2422,30 @@ p {
         relative;
 
     width:
-        275px;
+        340px;
 
     height:
-        365px;
+        460px;
 
     flex:
-        0 0 275px;
+        0 0 340px;
 
     overflow:
         hidden;
 
     border:
         1px solid
-        rgba(201,164,92,.32);
+        rgba(201,164,92,.35);
 
     border-radius:
-        8px 42px 8px 42px;
+        10px 50px 10px 50px;
 
     background:
-        #151616;
+        #ffffff;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.35),
-        0 0 10px rgba(201,164,92,.10);
+        0 15px 45px
+        rgba(0,0,0,.12);
 
     transition:
         transform .4s ease,
@@ -2484,9 +2477,9 @@ p {
     background:
         linear-gradient(
             0deg,
-            rgba(0,0,0,.92) 0%,
-            rgba(0,0,0,.35) 45%,
-            rgba(0,0,0,.02) 75%
+            rgba(0,0,0,.78) 0%,
+            rgba(0,0,0,.25) 45%,
+            rgba(0,0,0,.02) 72%
         );
 }
 
@@ -2508,18 +2501,23 @@ p {
         filter .5s ease;
 }
 
+
+/* =====================================================
+   BOARD INFO
+===================================================== */
+
 .board-info {
     position:
         absolute;
 
     left:
-        22px;
+        26px;
 
     right:
-        22px;
+        26px;
 
     bottom:
-        21px;
+        25px;
 
     z-index:
         2;
@@ -2527,10 +2525,10 @@ p {
 
 .board-info h3 {
     color:
-        #f4f1e8;
+        #ffffff;
 
     font-size:
-        18px;
+        21px;
 
     font-weight:
         600;
@@ -2547,7 +2545,7 @@ p {
         block;
 
     margin-top:
-        6px;
+        7px;
 
     color:
         var(--gold-light);
@@ -2563,10 +2561,12 @@ p {
 
     text-transform:
         uppercase;
-
-    text-shadow:
-        var(--gold-glow);
 }
+
+
+/* =====================================================
+   BOARD HOVER
+===================================================== */
 
 .board-card:hover,
 .board-card:active {
@@ -2574,13 +2574,13 @@ p {
         var(--gold-light);
 
     transform:
-        translateY(-7px);
+        translateY(-8px);
 
     box-shadow:
-        0 0 8px rgba(239,210,138,.65),
-        0 0 25px rgba(201,164,92,.42),
-        0 0 50px rgba(201,164,92,.18),
-        0 20px 55px rgba(0,0,0,.5);
+        0 12px 30px
+        rgba(0,0,0,.15),
+        0 0 20px
+        rgba(201,164,92,.18);
 }
 
 .board-card:hover
@@ -2595,7 +2595,13 @@ p {
         saturate(1.05);
 }
 
+
+/* =====================================================
+   AUTO SCROLL
+===================================================== */
+
 @keyframes boardMove {
+
     from {
         transform:
             translateX(0);
@@ -2605,6 +2611,7 @@ p {
         transform:
             translateX(-50%);
     }
+
 }
 
 
@@ -2617,128 +2624,80 @@ p {
         0;
 
     display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
+        block;
 
     width:
-        220px;
-
-    gap:
-        12px;
+        340px;
 }
+
+
+/* =====================================================
+   REMOVE PORTFOLIO BUTTON
+===================================================== */
+
+/*
+   The HTML portfolio buttons can remain temporarily,
+   but they will not appear.
+*/
 
 .board-portfolio-button {
-    width:
-        100%;
-
-    min-height:
-        42px;
-
     display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        9px;
-
-    padding:
-        0 16px;
-
-    border:
-        1px solid
-        rgba(201,164,92,.45);
-
-    border-radius:
-        6px 18px 6px 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(201,164,92,.08),
-            rgba(201,164,92,.025)
-        );
-
-    color:
-        var(--gold-light);
-
-    font-size:
-        10px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        .12em;
-
-    text-transform:
-        uppercase;
-
-    text-decoration:
-        none;
-
-    box-shadow:
-        0 0 8px rgba(201,164,92,.08),
-        inset 0 0 14px rgba(201,164,92,.025);
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        background .3s ease,
-        box-shadow .3s ease,
-        color .3s ease;
+        none !important;
 }
 
-.board-portfolio-button span {
-    font-size:
-        15px;
 
-    line-height:
-        1;
+/* =====================================================
+   MOBILE
+===================================================== */
 
-    transition:
-        transform .3s ease;
+@media (max-width: 700px) {
+
+    .board-section {
+        padding:
+            70px 0 60px;
+    }
+
+    .board-card {
+        width:
+            290px;
+
+        height:
+            400px;
+
+        flex-basis:
+            290px;
+
+        border-radius:
+            8px 38px 8px 38px;
+    }
+
+    .board-item {
+        width:
+            290px;
+    }
+
+    .board-group {
+        gap:
+            16px;
+    }
+
+    .board-info {
+        left:
+            21px;
+
+        right:
+            21px;
+
+        bottom:
+            21px;
+    }
+
+    .board-info h3 {
+        font-size:
+            18px;
+    }
+
 }
-
-.board-portfolio-button:hover,
-.board-portfolio-button:active {
-    transform:
-        translateY(-3px);
-
-    border-color:
-        var(--gold-light);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(201,164,92,.18),
-            rgba(201,164,92,.055)
-        );
-
-    color:
-        #f4f1e8;
-
-    box-shadow:
-        0 0 8px rgba(239,210,138,.35),
-        0 0 22px rgba(201,164,92,.18),
-        0 10px 25px rgba(0,0,0,.3);
-}
-
-.board-portfolio-button:hover span,
-.board-portfolio-button:active span {
-    transform:
-        translate(3px,-3px);
-}
-
 
 /* =========================================================
    CONTACT
