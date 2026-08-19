@@ -570,6 +570,38 @@ section {
         var(--gold-glow-strong);
 }
 
+/* =====================================================
+   RAPHAD VIDEO TEXT
+===================================================== */
+
+.group-showcase {
+    padding: 90px 24px;
+    background: #0b0c0c;
+}
+
+.raphad-video-text {
+    position: relative;
+
+    width: min(1150px, 100%);
+    height: 190px;
+
+    margin: auto;
+}
+
+#raphadTextVideo {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+#raphadTextCanvas {
+    width: 100%;
+    height: 100%;
+}
 
 /* =====================================================
    WHO WE ARE
