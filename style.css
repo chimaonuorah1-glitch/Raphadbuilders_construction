@@ -4676,3 +4676,71 @@ main {
             #eeeae2 !important;
     }
 }
+
+/* =========================================================
+   FINAL HERO SPACING FIX
+   Header → Cream Space → Rounded Hero
+========================================================= */
+
+/* Keep the page/background cream */
+html,
+body {
+    background: #eeeae2 !important;
+}
+
+/* Create clear cream space between header and hero */
+.hero {
+    margin-top: 125px !important;
+
+    /* Keep the hero as a separate rounded card */
+    border-radius: 30px !important;
+
+    overflow: hidden !important;
+
+    /* Keep the actual hero dark */
+    background: #0b0c0c !important;
+}
+
+/* Keep the video inside the rounded corners */
+.hero-media {
+    border-radius: inherit !important;
+    overflow: hidden !important;
+}
+
+/* Keep the hero overlay inside the rounded corners */
+.hero-overlay {
+    border-radius: inherit !important;
+}
+
+/* Make sure the area after the hero is cream */
+.about-section {
+    background: #eeeae2 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        margin-top: 92px !important;
+        border-radius: 24px !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        margin-top: 90px !important;
+        border-radius: 22px !important;
+    }
+
+}
