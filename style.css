@@ -4265,4 +4265,117 @@ section {
     }
 }
 
-       
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.nav-bar {
+    position: relative;
+    z-index: 1000;
+    background: #0b0c0c;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+body {
+    background: #eeeae2;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   The AREA around the hero is cream.
+   The actual hero/video stays dark.
+   ========================================================= */
+
+.hero {
+    background: #eeeae2 !important;
+    color: #f5f2eb;
+    padding: 0 20px 70px;
+}
+
+
+/* Actual hero/video card stays dark */
+
+.hero-media {
+    background: #050606 !important;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+
+/* Keep the video visible */
+
+.hero-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Keep hero text on top of the video */
+
+.hero-content {
+    background: transparent !important;
+    color: #f5f2eb !important;
+}
+
+
+/* Hero heading */
+
+.hero h1 {
+    color: #f5f2eb !important;
+}
+
+.hero h1 em {
+    color: #d4a936 !important;
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    color: rgba(245, 242, 235, 0.82) !important;
+}
+
+
+/* Hero eyebrow */
+
+.hero-eyebrow {
+    color: #d4a936 !important;
+}
+
+
+/* =========================================================
+   WHO WE ARE
+   ========================================================= */
+
+.about {
+    background: #eeeae2 !important;
+    color: #111111 !important;
+}
+
+.about h2 {
+    color: #111111 !important;
+}
+
+.about h2 em {
+    color: #111111 !important;
+}
+
+.about p {
+    color: #555555 !important;
+}
+
+.about .section-label {
+    color: #a8843e !important;
+}
+
+.about .text-button {
+    color: #a8843e !important;
+}       
