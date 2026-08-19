@@ -4184,3 +4184,83 @@ ol {
             none !important;
     }
 }
+
+/* =========================================================
+   FIX: CENTER MAIN DARK SECTION + CREAM PAGE BACKGROUND
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #eeeae2;
+    overflow-x: hidden;
+}
+
+/* Keep the main website section centered */
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #0b0d0c;
+    overflow: hidden;
+}
+
+/* Make every full-width section stay inside the centered layout */
+section {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Prevent containers from creating the right-side overflow */
+.container {
+    width: min(100% - 48px, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Make the dark website area remain centered */
+.hero,
+.about,
+.services,
+.projects,
+.gallery,
+.process,
+.quality,
+.mission,
+.values,
+.board,
+.contact {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .container {
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    body {
+        background: #eeeae2;
+    }
+}
