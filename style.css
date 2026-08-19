@@ -246,7 +246,7 @@ ol {
 }
 
 
-/*/* =====================================================
+/* =====================================================
    HEADER
 ===================================================== */
 
@@ -4265,85 +4265,4 @@ section {
     }
 }
 
-       /* ================================
-   HEADER
-================================ */
-
-.nav-bar {
-    position: relative;
-    z-index: 1000;
-    background: #0b0c0c;
-    margin-bottom: 35px;
-    border-bottom: 1px solid rgba(201, 164, 92, 0.18);
-}
-
-.nav-inner {
-    min-height: 92px;
-}
-
-
-/* ================================
-   HERO — CREAM BACKGROUND
-================================ */
-
-.hero {
-    background: #eeeae2 !important;
-    color: #111111 !important;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.hero-media {
-    background: #eeeae2 !important;
-}
-
-.hero-content {
-    background: transparent !important;
-    color: #111111 !important;
-}
-
-.hero h1 {
-    color: #111111 !important;
-}
-
-.hero h1 em {
-    color: #b08a3e !important;
-}
-
-.hero p {
-    color: #555555 !important;
-}
-
-.hero-eyebrow {
-    color: #a8843e !important;
-}
-
-
-/* ================================
-   WHO WE ARE — CREAM
-================================ */
-
-.about {
-    background: #eeeae2 !important;
-    color: #111111 !important;
-}
-
-.about h2 {
-    color: #111111 !important;
-}
-
-.about h2 em {
-    color: #111111 !important;
-}
-
-.about p {
-    color: #555555 !important;
-}
-
-.about .section-label {
-    color: #a8843e !important;
-}
-
-.about .text-button {
-    color: #a8843e !important;
-}
+       
