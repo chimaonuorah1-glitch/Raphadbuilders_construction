@@ -1149,3 +1149,243 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* =================================================
+   RAPHAD TEXT VIDEO
+================================================= */
+
+const raphadVideo =
+    document.getElementById(
+        "raphadTextVideo"
+    );
+
+const raphadCanvas =
+    document.getElementById(
+        "raphadTextCanvas"
+    );
+
+
+if (
+    raphadVideo &&
+    raphadCanvas
+) {
+
+    const ctx =
+        raphadCanvas.getContext("2d");
+
+
+    let animationStarted = false;
+
+
+    function resizeRaphadCanvas() {
+
+        const rect =
+            raphadCanvas.getBoundingClientRect();
+
+        const ratio =
+            window.devicePixelRatio || 1;
+
+
+        raphadCanvas.width =
+            rect.width * ratio;
+
+        raphadCanvas.height =
+            rect.height * ratio;
+
+
+        ctx.setTransform(
+            ratio,
+            0,
+            0,
+            ratio,
+            0,
+            0
+        );
+
+    }
+
+
+    function drawRaphadVideo() {
+
+        const width =
+            raphadCanvas.clientWidth;
+
+        const height =
+            raphadCanvas.clientHeight;
+
+
+        if (!width || !height) {
+
+            requestAnimationFrame(
+                drawRaphadVideo
+            );
+
+            return;
+
+        }
+
+
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        /* -----------------------------------------
+           TEXT MASK
+        ----------------------------------------- */
+
+        ctx.save();
+
+
+        const fontSize =
+            Math.min(
+                width * 0.17,
+                175
+            );
+
+
+        ctx.font =
+            `700 ${fontSize}px "DM Sans", sans-serif`;
+
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        ctx.fillStyle = "#000";
+
+
+        ctx.fillText(
+            "RAPHAD",
+            width / 2,
+            height / 2
+        );
+
+
+        /* -----------------------------------------
+           KEEP VIDEO ONLY INSIDE TEXT
+        ----------------------------------------- */
+
+        ctx.globalCompositeOperation =
+            "source-in";
+
+
+        if (
+            raphadVideo.readyState >= 2 &&
+            raphadVideo.videoWidth &&
+            raphadVideo.videoHeight
+        ) {
+
+            const videoWidth =
+                raphadVideo.videoWidth;
+
+            const videoHeight =
+                raphadVideo.videoHeight;
+
+
+            const videoRatio =
+                videoWidth / videoHeight;
+
+            const canvasRatio =
+                width / height;
+
+
+            let drawWidth;
+            let drawHeight;
+            let offsetX;
+            let offsetY;
+
+
+            if (
+                videoRatio > canvasRatio
+            ) {
+
+                drawHeight = height;
+
+                drawWidth =
+                    height * videoRatio;
+
+                offsetX =
+                    (width - drawWidth) / 2;
+
+                offsetY = 0;
+
+            } else {
+
+                drawWidth = width;
+
+                drawHeight =
+                    width / videoRatio;
+
+                offsetX = 0;
+
+                offsetY =
+                    (height - drawHeight) / 2;
+
+            }
+
+
+            ctx.drawImage(
+                raphadVideo,
+                offsetX,
+                offsetY,
+                drawWidth,
+                drawHeight
+            );
+
+        }
+
+
+        ctx.restore();
+
+
+        requestAnimationFrame(
+            drawRaphadVideo
+        );
+
+    }
+
+
+    function startRaphadVideo() {
+
+        resizeRaphadCanvas();
+
+        raphadVideo.play()
+            .catch(() => {});
+
+
+        if (!animationStarted) {
+
+            animationStarted = true;
+
+            requestAnimationFrame(
+                drawRaphadVideo
+            );
+
+        }
+
+    }
+
+
+    raphadVideo.addEventListener(
+        "loadeddata",
+        startRaphadVideo
+    );
+
+
+    window.addEventListener(
+        "resize",
+        resizeRaphadCanvas
+    );
+
+
+    if (
+        raphadVideo.readyState >= 2
+    ) {
+
+        startRaphadVideo();
+
+    }
+
+}
