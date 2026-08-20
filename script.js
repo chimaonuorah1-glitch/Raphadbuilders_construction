@@ -276,14 +276,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         .scroll-reveal {
 
-            opacity: 0;
+            opacity: 1;
 
             transform:
-                translateY(35px);
+                translateY(0);
 
             transition:
-                opacity .8s ease,
-                transform .8s cubic-bezier(.22,1,.36,1);
+                none;
 
         }
 
