@@ -1246,7 +1246,7 @@ section {
 
 
 /* =========================================================
-   SERVICE FEATURE
+   SERVICE FEATURE — FLOATING IMAGE
 ========================================================= */
 
 .service-feature {
@@ -1263,11 +1263,20 @@ section {
     margin-top:
         0;
 
+    padding:
+        45px;
+
     background:
         var(--white);
 
     overflow:
         hidden;
+
+    gap:
+        45px;
+
+    align-items:
+        center;
 }
 
 .service-feature.reverse {
@@ -1276,12 +1285,27 @@ section {
         minmax(0,1.05fr);
 }
 
+
+/* =========================================================
+   FLOATING IMAGE
+========================================================= */
+
 .service-feature-image {
-    min-height:
-        600px;
+    height:
+        560px;
 
     overflow:
         hidden;
+
+    border-radius:
+        12px 55px 12px 55px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.16);
+
+    background:
+        #e8e3d9;
 }
 
 .service-feature-image img {
@@ -1290,6 +1314,9 @@ section {
 
     height:
         100%;
+
+    display:
+        block;
 
     object-fit:
         cover;
@@ -1304,6 +1331,11 @@ section {
         scale(1.04);
 }
 
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
 .service-feature-content {
     display:
         flex;
@@ -1315,11 +1347,11 @@ section {
         center;
 
     padding:
-        80px
+        40px
         clamp(
-            30px,
-            7vw,
-            100px
+            20px,
+            5vw,
+            70px
         );
 }
 
@@ -1365,7 +1397,6 @@ section {
     line-height:
         1.9;
 }
-
 
 /* =========================================================
    SERVICE DETAIL
