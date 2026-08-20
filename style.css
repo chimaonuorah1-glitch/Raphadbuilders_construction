@@ -4470,23 +4470,3 @@ body {
     }
 
 }
-
-/* =====================================================
-   TEMPORARY VISIBILITY TEST
-===================================================== */
-
-.projects-section,
-.gallery-section,
-.process-section,
-.quality-section,
-.mission-section,
-.values-section,
-.board-section,
-.contact-section,
-.site-footer {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 5 !important;
-}
