@@ -1035,7 +1035,7 @@ section {
 
 
 /* =========================================================
-   SERVICE CARD
+   SERVICE CARD — PHOTO CARDS
 ========================================================= */
 
 .service-card {
@@ -1062,8 +1062,17 @@ section {
 
     box-shadow:
         0 25px 60px
-        rgba(0,0,0,.18);
+        rgba(0,0,0,.22);
+
+    transition:
+        transform .45s var(--ease),
+        box-shadow .45s var(--ease);
 }
+
+
+/* =========================================================
+   SERVICE CARD IMAGE
+========================================================= */
 
 .service-card-image {
     position:
@@ -1083,25 +1092,29 @@ section {
     height:
         100%;
 
+    display:
+        block;
+
     object-fit:
         cover;
 
     opacity:
-        .78;
+        .9;
+
+    filter:
+        saturate(.95)
+        contrast(1.02);
 
     transition:
         transform .8s var(--ease),
-        opacity .4s ease;
+        opacity .4s ease,
+        filter .4s ease;
 }
 
-.service-card:hover
-.service-card-image img {
-    transform:
-        scale(1.07);
 
-    opacity:
-        .95;
-}
+/* =========================================================
+   DARK IMAGE OVERLAY
+========================================================= */
 
 .service-card::after {
     content:
@@ -1113,13 +1126,52 @@ section {
     inset:
         0;
 
+    z-index:
+        1;
+
     background:
         linear-gradient(
             180deg,
-            rgba(10,11,9,.08),
-            rgba(10,11,9,.88)
+            rgba(10,11,9,.04) 0%,
+            rgba(10,11,9,.18) 35%,
+            rgba(10,11,9,.88) 100%
         );
+
+    pointer-events:
+        none;
 }
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.service-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.28);
+}
+
+.service-card:hover
+.service-card-image img {
+    transform:
+        scale(1.07);
+
+    opacity:
+        1;
+
+    filter:
+        saturate(1.05)
+        contrast(1.04);
+}
+
+
+/* =========================================================
+   SERVICE CARD CONTENT
+========================================================= */
 
 .service-card-content {
     position:
@@ -1180,7 +1232,7 @@ section {
         13px;
 
     color:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.68);
 
     font-size:
         12px;
@@ -1188,6 +1240,11 @@ section {
     line-height:
         1.65;
 }
+
+
+/* =========================================================
+   SERVICE ARROW
+========================================================= */
 
 .service-arrow {
     position:
@@ -1230,6 +1287,11 @@ section {
         16px;
 }
 
+
+/* =========================================================
+   SERVICES SCROLL
+========================================================= */
+
 @keyframes servicesScroll {
     from {
         transform:
@@ -1243,7 +1305,6 @@ section {
             );
     }
 }
-
 
 /* =========================================================
    SERVICE FEATURE — FLOATING IMAGE
