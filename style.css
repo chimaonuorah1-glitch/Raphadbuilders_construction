@@ -180,87 +180,75 @@ section {
 }
 
 
-/* =========================================================
+/* =====================================================
    LOADING SCREEN
-   ========================================================= */
+===================================================== */
 
 .loading-screen {
     position: fixed;
     inset: 0;
-
-    z-index: 99999;
+    z-index: 9999;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #11130f;
+    background: #f4f1e8;
 
     transition:
-        opacity .7s ease,
-        visibility .7s ease;
+        opacity .8s ease,
+        visibility .8s ease;
 }
 
-.loading-screen.hidden {
+.loading-screen.loaded {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
 }
 
 .loading-content {
-    width: min(90%, 420px);
     text-align: center;
-    color: white;
 }
 
 .loading-logo {
-    width: 170px;
-    margin: 0 auto 25px;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin: 0 auto 18px;
 }
 
 .loading-content p {
     color: var(--gold-light);
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: .25em;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
 }
 
 .loading-line {
-    width: 150px;
-    height: 2px;
-
+    width: 130px;
+    height: 1px;
+    background: rgba(201, 164, 92, .2);
     margin: 22px auto 0;
-
     overflow: hidden;
-
-    background:
-        rgba(255,255,255,.12);
 }
 
 .loading-line span {
     display: block;
-
-    width: 45%;
+    width: 40%;
     height: 100%;
-
     background: var(--gold);
-
-    animation:
-        loadingMove 1.4s ease-in-out infinite;
+    animation: loadingLine 1.4s ease infinite;
+    box-shadow: var(--gold-glow);
 }
 
-@keyframes loadingMove {
-    0% {
+@keyframes loadingLine {
+    from {
         transform: translateX(-150%);
     }
 
-    100% {
+    to {
         transform: translateX(350%);
     }
 }
-
 
 /* =====================================================
    HERO
