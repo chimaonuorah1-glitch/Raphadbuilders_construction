@@ -587,7 +587,7 @@ section {
             rgba(201,164,92,.055),
             transparent 55%
         ),
-        #FFFFFF;
+        #eeeae2;
 }
 
 
@@ -655,7 +655,7 @@ section {
 
     border: 2px solid #c9a45c;
 
-    background: #FFFFFF;
+    background: #eeeae2;
 
     box-shadow:
         0 0 7px rgba(201,164,92,.45),
@@ -725,7 +725,7 @@ section {
 }
 
 .subsidiaries-copy strong {
-    color: #FFFFFF;
+    color: #eeeae2;
 
     font-size: clamp(27px, 4vw, 42px);
     font-weight: 600;
