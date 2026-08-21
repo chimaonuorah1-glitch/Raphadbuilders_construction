@@ -5723,3 +5723,44 @@ body {
     }
 
 }
+
+/* =========================================================
+   RAPHAD BUILDERS — HEADER + HERO POSITION FIX
+   ========================================================= */
+
+/* Keep header fixed while scrolling */
+.site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+/* Give the page room for the fixed header */
+body {
+    padding-top: 100px;
+}
+
+
+/* Pull the hero close to the header */
+.hero {
+    margin-top: 15px !important;
+    padding-top: 0 !important;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    .hero {
+        margin-top: 15px !important;
+        padding-top: 0 !important;
+    }
+
+}
