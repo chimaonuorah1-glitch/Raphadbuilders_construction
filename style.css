@@ -5814,3 +5814,125 @@ body {
 .site-header .menu-toggle span {
     background: #171914 !important;
 }
+
+/* =====================================================
+   LOADING SCREEN — FINAL
+===================================================== */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff !important;
+
+    animation: hideLoader 1s ease 1.2s forwards;
+}
+
+
+/* LOADING CONTENT */
+
+.loading-content {
+    text-align: center;
+
+    animation: loadingContent .6s ease forwards;
+}
+
+.loading-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    margin: 0 auto 18px;
+}
+
+.loading-content p {
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+
+/* LOADING LINE */
+
+.loading-line {
+    width: 130px;
+    height: 1px;
+
+    background: rgba(201, 164, 92, .2);
+
+    margin: 22px auto 0;
+
+    overflow: hidden;
+}
+
+.loading-line span {
+    display: block;
+
+    width: 40%;
+    height: 100%;
+
+    background: var(--gold);
+
+    animation: loadingLine 1s ease infinite;
+
+    box-shadow: var(--gold-glow);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes loadingLine {
+
+    from {
+        transform: translateX(-150%);
+    }
+
+    to {
+        transform: translateX(350%);
+    }
+
+}
+
+@keyframes hideLoader {
+
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    70% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+}
+
+@keyframes loadingContent {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
