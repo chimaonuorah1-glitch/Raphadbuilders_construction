@@ -34,23 +34,64 @@
 
 <body>
 
-<!--===========================================================
-    header 
- ================================================================-->
-    
 <header class="site-header">
 
     <a href="#" class="site-logo">
         RAPHAD
         <span>BUILDERS</span>
-    </a>       
-    <button class="menu-toggle" type="button" aria-label="Open menu">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
 </header>
+
+
+<!-- MENU -->
+
+<div class="menu-panel" id="menuPanel">
+
+    <div class="menu-top">
+        <span>MENU</span>
+
+        <button class="menu-close" id="menuClose" type="button">
+            ×
+        </button>
+    </div>
+
+    <nav class="main-menu">
+
+        <a href="#home">
+            <span>01</span>
+            HOME
+        </a>
+
+        <a href="#about">
+            <span>02</span>
+            ABOUT
+        </a>
+
+        <a href="#services">
+            <span>03</span>
+            SERVICES
+        </a>
+
+        <a href="#projects">
+            <span>04</span>
+            PROJECTS
+        </a>
+
+        <a href="#contact">
+            <span>05</span>
+            CONTACT
+        </a>
+
+    </nav>
+
+</div>
 
 
 <!-- =====================================================
@@ -2201,7 +2242,26 @@
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const menuPanel = document.getElementById("menuPanel");
+const menuClose = document.getElementById("menuClose");
 
+menuToggle.addEventListener("click", () => {
+    menuPanel.classList.add("active");
+});
+
+menuClose.addEventListener("click", () => {
+    menuPanel.classList.remove("active");
+});
+
+document.querySelectorAll(".main-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        menuPanel.classList.remove("active");
+    });
+});
+</script>
+    
 <script src="script.js"></script>
 
 </body>
