@@ -5046,3 +5046,289 @@ body {
     }
 
 }
+
+/* =========================================================
+   CYNOSURE HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+
+    width: 100%;
+    height: 100px;
+
+    padding: 0 6%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8e5df;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.site-logo {
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+
+    color: #171914;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+}
+
+.site-logo span {
+    margin-top: 7px;
+
+    font-size: 7px;
+    font-weight: 500;
+
+    letter-spacing: 2.5px;
+
+    color: #777870;
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.menu-toggle {
+    width: 54px;
+    height: 54px;
+
+    padding: 0;
+
+    border: 1px solid #d8d5cd;
+
+    background: #f7f5ef;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 2px;
+
+    background: #171914;
+
+    transition: all .3s ease;
+}
+
+.menu-toggle:hover {
+    background: #c9a45c;
+
+    border-color: #c9a45c;
+}
+
+.menu-toggle:hover span:nth-child(2) {
+    width: 15px;
+}
+
+
+/* =========================================================
+   MENU PANEL
+   ========================================================= */
+
+.menu-panel {
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: min(460px, 100%);
+
+    height: 100vh;
+
+    background: #171914;
+
+    color: #ffffff;
+
+    z-index: 2000;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    transition: right .45s cubic-bezier(.77, 0, .18, 1);
+}
+
+.menu-panel.active {
+    right: 0;
+}
+
+
+/* =========================================================
+   MENU TOP
+   ========================================================= */
+
+.menu-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.menu-top span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #c9a45c;
+}
+
+.menu-close {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    transition: all .3s ease;
+}
+
+.menu-close:hover {
+    background: #c9a45c;
+
+    border-color: #c9a45c;
+
+    color: #171914;
+}
+
+
+/* =========================================================
+   MENU LINKS
+   ========================================================= */
+
+.main-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 45px;
+}
+
+.main-menu a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px 0;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    transition: all .3s ease;
+}
+
+.main-menu a span {
+    width: 25px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #c9a45c;
+}
+
+.main-menu a:hover {
+    color: #c9a45c;
+
+    padding-left: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        height: 90px;
+
+        padding: 0 5%;
+    }
+
+    .site-logo {
+        font-size: 17px;
+
+        letter-spacing: 3px;
+    }
+
+    .site-logo span {
+        font-size: 6px;
+
+        letter-spacing: 2px;
+    }
+
+    .menu-toggle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .menu-panel {
+        padding: 30px 25px;
+    }
+
+    .main-menu a {
+        font-size: 21px;
+    }
+
+}
