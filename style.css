@@ -5795,3 +5795,34 @@ body {
 .site-header .menu-toggle span {
     background: #171914 !important;
 }
+
+/* =========================================================
+   KEEP HEADER WHITE WHILE SCROLLING
+   ========================================================= */
+
+.site-header,
+.site-header.scrolled,
+.site-header.sticky,
+.site-header.scrolled-header {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #171914 !important;
+}
+
+
+/* Keep logo dark */
+.site-header .site-logo,
+.site-header .site-logo span {
+    color: #171914 !important;
+}
+
+
+/* Keep hamburger light */
+.site-header .menu-toggle {
+    background: #f7f5ef !important;
+    border-color: #d8d5cd !important;
+}
+
+.site-header .menu-toggle span {
+    background: #171914 !important;
+}
