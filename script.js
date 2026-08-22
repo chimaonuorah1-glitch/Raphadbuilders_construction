@@ -1831,3 +1831,138 @@ window.addEventListener("load", () => {
     }, 1800);
 
 });
+
+/* =================================================  
+   GALLERY  
+================================================= */  
+
+const galleryImages = [  
+
+    "assets/gallery-1.jpg",  
+    "assets/gallery-2.jpg",  
+    "assets/gallery-3.jpg", 
+    "assets/gallery-4.jpg",
+    "assets/gallery-5.jpg",
+    "assets/gallery-6.jpg",
+    "assets/gallery-7.jpg",
+    "assets/gallery-8.jpg"
+   
+   ];  
+   
+
+
+let currentGallery = 0;  
+
+
+const galleryImage =  
+    document.getElementById(  
+        "galleryImage"  
+    );  
+
+
+const galleryCounter =  
+    document.getElementById(  
+        "galleryCounter"  
+    );  
+
+
+const galleryPrev =  
+    document.getElementById(  
+        "galleryPrev"  
+    );  
+
+
+const galleryNext =  
+    document.getElementById(  
+        "galleryNext"  
+    );  
+
+
+function showGalleryImage(index) {  
+
+    if (!galleryImage) {  
+        return;  
+    }  
+
+
+    if (index < 0) {  
+
+        currentGallery =  
+            galleryImages.length - 1;  
+
+    } else if (  
+        index >= galleryImages.length  
+    ) {  
+
+        currentGallery = 0;  
+
+    } else {  
+
+        currentGallery = index;  
+
+    }  
+
+
+    /*  
+     * Small fade effect.  
+     */  
+
+    galleryImage.style.opacity = "0";  
+
+
+    setTimeout(() => {  
+
+        galleryImage.src =  
+            galleryImages[  
+                currentGallery  
+            ];  
+
+
+        galleryImage.style.opacity = "1";  
+
+    }, 180);  
+
+
+    if (galleryCounter) {  
+
+        galleryCounter.textContent =  
+            `${currentGallery + 1} / ${galleryImages.length}`;  
+
+    }  
+
+}  
+
+
+if (galleryPrev) {  
+
+    galleryPrev.addEventListener(  
+        "click",  
+        () => {  
+
+            showGalleryImage(  
+                currentGallery - 1  
+            );  
+
+        }  
+    );  
+
+}  
+
+
+if (galleryNext) {  
+
+    galleryNext.addEventListener(  
+        "click",  
+        () => {  
+
+            showGalleryImage(  
+                currentGallery + 1  
+            );  
+
+        }  
+    );  
+
+}  
+
+
+showGalleryImage(0);  
